@@ -1,0 +1,28 @@
+---
+# handlers file for zabbix_server
+- name: restart zabbix_server
+  service:
+    name: zabbix-server
+    state: restarted
+  when:
+    - ansible_virtualization_type != "docker" or zabbix_server_ignore_docker
+
+- name: create selinux mod
+  command: checkmodule -M -m -o /etc/zabbix/my-zabbixserver.mod /etc/zabbix/my-zabbixserver.te
+
+- name: create selinux pp
+  command: semodule_package -o /etc/zabbix/my-zabbixserver.pp -m /etc/zabbix/my-zabbixserver.mod
+
+- name: load selinux pp
+  command: semodule -i /etc/zabbix/my-zabbixserver.pp
+
+- name: import zabbix schema
+  mysql_db:
+    state: import
+    name: zabbix
+    target: "{{ zabbix_documentation_directory }}/create.sql"
+    login_host: "{{ zabbix_server_database_host }}"
+    login_user: "{{ zabbix_server_database_user }}"
+    login_password: "{{ zabbix_server_database_pass }}"
+  when:
+    - ansible_virtualization_type != "docker" or zabbix_ignore_docker

@@ -1,0 +1,69 @@
+---
+# tasks file for zabbix_server
+- name: install zabbix-server requirements
+  package:
+    name: "{{ zabbix_server_requirements }}"
+    state: present
+  register: zabbix_server_install_zabbix_server_requirements
+  retries: 3
+  until: zabbix_server_install_zabbix_server_requirements is succeeded
+
+- name: install zabbix_server
+  package:
+    name: zabbix-server-mysql
+    state: "{{ zabbix_server_package_state }}"
+  register: zabbix_server_install_zabbix_server
+  until: zabbix_server_install_zabbix_server is succeeded
+  retries: 3
+
+- name: unarchive zabbix schema
+  command: gunzip {{ zabbix_documentation_directory }}/create.sql.gz
+  args:
+    creates: "{{ zabbix_documentation_directory }}/create.sql"
+  notify:
+    - import zabbix schema
+  when:
+    - ansible_virtualization_type != "docker" or zabbix_server_ignore_docker
+
+- name: selinux settings for zabbix_server
+  seboolean:
+    name: "{{ item }}"
+    state: yes
+    persistent: yes
+  with_items:
+    - httpd_can_connect_zabbix
+    - httpd_can_network_connect_db
+    - zabbix_can_network
+  when:
+    - ansible_selinux.status is defined
+    - ansible_selinux.status == "enabled"
+
+- name: place selinux type enforcement
+  copy:
+    src: my-zabbixserver.te
+    dest: /etc/zabbix/my-zabbixserver.te
+  notify:
+    - create selinux mod
+    - create selinux pp
+    - load selinux pp
+  when:
+    - ansible_selinux.status is defined
+    - ansible_selinux.status == "enabled"
+
+- name: flush handlers
+  meta: flush_handlers
+
+- name: configure zabbix_server
+  template:
+    src: zabbix_server.conf.j2
+    dest: /etc/zabbix/zabbix_server.conf
+  notify:
+    - restart zabbix_server
+
+- name: start and enable zabbix_server
+  service:
+    name: zabbix-server
+    state: started
+    enabled: yes
+  when:
+    - ansible_virtualization_type != "docker" or zabbix_server_ignore_docker
