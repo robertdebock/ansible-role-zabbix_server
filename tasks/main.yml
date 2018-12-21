@@ -16,6 +16,17 @@
   until: zabbix_server_install_zabbix_server is succeeded
   retries: 3
 
+- name: list installed packages
+  package_facts:
+
+- name: find installed version of zabbix-server-mysql
+  set_fact:
+    zabbix_server_version: "{{ packages.zabbix-server-mysql.version }}"
+
+- name: show zabbix_server_version
+  debug:
+    msg: "zabbix_server_version: {{ zabbix_server_version }}"
+
 - name: unarchive zabbix schema
   command: gunzip {{ zabbix_documentation_directory }}/create.sql.gz
   args:
