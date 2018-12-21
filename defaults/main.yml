@@ -3,7 +3,7 @@
 
 # The details to connect to the database.
 zabbix_server_database_host: localhost
-zabbix_server_database_user: admin
+zabbix_server_database_user: zabbix
 zabbix_server_database_password: zabbix
 
 # To update packages this role places on the system, set `zabbix_server_package_state` to `latest`.
