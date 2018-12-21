@@ -14,8 +14,8 @@ _zabbix_server_requirements:
 zabbix_server_requirements: "{{ _zabbix_server_requirements[ansible_distribution ~ '-' ~ ansible_distribution_major_version] | default(_zabbix_server_requirements[ansible_distribution]) }}"
 
 _zabbix_documentation_directory:
-  CentOS: "/usr/share/doc/zabbix-server-{{ zabbix_server_type }}-{{ zabbix_server_mysql_version }}"
-  Debian: "/usr/share/doc/zabbix-server-{{ zabbix_server_type }}"
-  Ubuntu: "/usr/share/doc/zabbix-server-{{ zabbix_server_type }}"
+  CentOS: /usr/share/doc/zabbix-server-mysql-{{ zabbix_server_mysql_version }}
+  Debian: /usr/share/doc/zabbix-server-mysql
+  Ubuntu: /usr/share/doc/zabbix-server-mysql
 
 zabbix_documentation_directory: "{{ _zabbix_documentation_directory[ansible_distribution] }}"
