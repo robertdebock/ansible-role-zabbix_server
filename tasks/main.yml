@@ -1,5 +1,12 @@
 ---
 # tasks file for zabbix_server
+- name: test veriables and environment
+  assert:
+    that:
+      - zabbix_server_database_host is defined
+      - zabbix_server_database_user is defined
+      - zabbix_server_database_password is defined
+
 - name: install zabbix-server requirements
   package:
     name: "{{ zabbix_server_requirements }}"
