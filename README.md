@@ -33,7 +33,7 @@ These variables are set in `defaults/main.yml`:
 
 # The details to connect to the database.
 zabbix_server_database_host: localhost
-zabbix_server_database_user: admin
+zabbix_server_database_user: zabbix
 zabbix_server_database_password: zabbix
 
 # To update packages this role places on the system, set `zabbix_server_package_state` to `latest`.
@@ -75,19 +75,19 @@ This role has been tested against the following distributions and Ansible versio
 
 |distribution|ansible 2.6|ansible 2.7|ansible devel|
 |------------|-----------|-----------|-------------|
-|alpine-edge*|yes|yes|yes*|
-|alpine-latest|yes|yes|yes*|
-|archlinux|yes|yes|yes*|
+|alpine-edge*|no|no|no*|
+|alpine-latest|no|no|no*|
+|archlinux|no|no|no*|
 |centos-6|yes|yes|yes*|
 |centos-latest|yes|yes|yes*|
 |debian-latest|yes|yes|yes*|
 |debian-stable|yes|yes|yes*|
 |debian-unstable*|yes|yes|yes*|
-|fedora-latest|yes|yes|yes*|
-|fedora-rawhide*|yes|yes|yes*|
-|opensuse-leap|yes|yes|yes*|
-|opensuse-tumbleweed|yes|yes|yes*|
-|ubuntu-artful|yes|yes|yes*|
+|fedora-latest|no|no|no*|
+|fedora-rawhide*|no|no|no*|
+|opensuse-leap|no|no|no*|
+|opensuse-tumbleweed|no|no|no*|
+|ubuntu-artful|no|no|no*|
 |ubuntu-devel*|yes|yes|yes*|
 |ubuntu-latest|yes|yes|yes*|
 
