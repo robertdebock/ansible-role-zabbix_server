@@ -15,7 +15,7 @@ platforms:
     image: alpine:latest
     command: sh -c "while true ; do sleep 1 ; done"
   - name: zabbix_server-archlinux
-    image: base/archlinux
+    image: archlinux/base
   - name: zabbix_server-centos-6
     image: centos:6
   - name: zabbix_server-centos-latest
