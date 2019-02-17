@@ -93,7 +93,7 @@ This role has been tested against the following distributions and Ansible versio
 |opensuse-tumbleweed|no|no|no*|
 |ubuntu-devel*|yes|yes|yes*|
 |ubuntu-latest|yes|yes|yes*|
-|ubuntu-rolling|no|no|no*|
+|ubuntu-rolling|yes|yes|yes*|
 
 A single star means the build may fail, it's marked as an experimental build.
 
