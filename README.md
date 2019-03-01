@@ -90,7 +90,6 @@ This role has been tested against the following distributions and Ansible versio
 |fedora-latest|no|no|no*|
 |fedora-rawhide*|no|no|no*|
 |opensuse-leap|no|no|no*|
-|opensuse-tumbleweed|no|no|no*|
 |ubuntu-devel*|yes|yes|yes*|
 |ubuntu-latest|yes|yes|yes*|
 |ubuntu-rolling|yes|yes|yes*|
