@@ -18,7 +18,7 @@
 - name: install zabbix_server
   package:
     name: zabbix-server-mysql
-    state: "{{ zabbix_server_package_state }}"
+    state: present
   register: zabbix_server_install_zabbix_server
   until: zabbix_server_install_zabbix_server is succeeded
   retries: 3
@@ -37,7 +37,7 @@
   notify:
     - import zabbix schema
   when:
-    - ansible_virtualization_type != "docker" or zabbix_server_ignore_docker
+    - ansible_virtualization_type != "docker"
 
 - name: selinux settings for zabbix_server
   seboolean:
@@ -80,4 +80,4 @@
     state: started
     enabled: yes
   when:
-    - ansible_virtualization_type != "docker" or zabbix_server_ignore_docker
+    - ansible_virtualization_type != "docker"

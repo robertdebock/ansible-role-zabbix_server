@@ -1,10 +1,9 @@
 ---
-- name: Converge
+- name: Prepare
   hosts: all
-  gather_facts: false
-  become: true
+  gather_facts: no
+  become: yes
 
   roles:
     - role: robertdebock.bootstrap
     - role: robertdebock.zabbix_repository
-    - role: ansible-role-zabbix_server
