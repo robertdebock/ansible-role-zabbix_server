@@ -26,10 +26,6 @@
 - name: list installed packages
   package_facts:
 
-- name: find version of zabbix-server-mysql
-  set_fact:
-    zabbix_server_version: "{{ packages['zabbix-server-mysql'][0]['version'] }}"
-
 - name: unarchive zabbix schema
   command: gunzip {{ zabbix_documentation_directory }}/create.sql.gz
   args:
