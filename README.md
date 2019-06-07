@@ -1,7 +1,8 @@
 zabbix_server
 =========
 
-[![Build Status](https://travis-ci.org/robertdebock/ansible-role-zabbix_server.svg?branch=master)](https://travis-ci.org/robertdebock/ansible-role-zabbix_server)
+<img src="https://docs.ansible.com/ansible-tower/3.2.4/html_ja/installandreference/_static/images/logo_invert.png" width="10%" height="10%" alt="Ansible logo" align="right"/>
+<a href="https://travis-ci.org/robertdebock/ansible-role-zabbix_server"><img src="https://travis-ci.org/robertdebock/ansible-role-zabbix_server.svg?branch=master" alt="Build status" align="left"/></a>
 
 Install and configure zabbix_server on your system.
 
@@ -78,21 +79,21 @@ Compatibility
 
 This role has been tested against the following distributions and Ansible version:
 
-|distribution|ansible 2.6|ansible 2.7|ansible devel|
+|distribution|ansible 2.7|ansible 2.8|ansible devel|
 |------------|-----------|-----------|-------------|
 |alpine-edge*|no|no|no*|
 |alpine-latest|no|no|no*|
 |archlinux|no|no|no*|
-|centos-6|no|yes|yes*|
-|centos-latest|no|yes|yes*|
-|debian-latest|no|yes|yes*|
-|debian-stable|no|yes|yes*|
-|debian-unstable*|no|yes|yes*|
+|centos-6|yes|yes|yes*|
+|centos-latest|yes|yes|yes*|
+|debian-latest|yes|yes|yes*|
+|debian-stable|yes|yes|yes*|
+|debian-unstable*|yes|yes|yes*|
 |fedora-latest|no|no|no*|
 |fedora-rawhide*|no|no|no*|
 |opensuse-leap|no|no|no*|
-|ubuntu-devel*|no|yes|yes*|
-|ubuntu-latest|no|yes|yes*|
+|ubuntu-devel*|yes|yes|yes*|
+|ubuntu-latest|yes|yes|yes*|
 |ubuntu-rolling|no|no|no*|
 
 A single star means the build may fail, it's marked as an experimental build.
