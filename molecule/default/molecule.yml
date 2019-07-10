@@ -25,9 +25,6 @@ platforms:
   - name: zabbix_server-centos-latest
     image: centos:latest
     pre_build_image: yes
-  - name: zabbix_server-debian-latest
-    image: debian:latest
-    pre_build_image: yes
   - name: zabbix_server-debian-stable
     image: debian:stable
     pre_build_image: yes
