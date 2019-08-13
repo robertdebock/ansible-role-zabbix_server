@@ -26,10 +26,20 @@
 - name: list installed packages
   package_facts:
 
+- name: find zabbix_documentation_directory
+  find:
+    paths: /usr/share/doc
+    file_type: directory
+    use_regex: yes
+    patterns:
+      - '^zabbix-server-mysql'
+      - '^zabbix-server-mysql-.*'
+  register: zabbix_documentation_directory
+
 - name: unarchive zabbix schema
-  command: gunzip {{ zabbix_documentation_directory }}/create.sql.gz
+  command: gunzip {{ zabbix_documentation_directory.files.path }}/create.sql.gz
   args:
-    creates: "{{ zabbix_documentation_directory }}/create.sql"
+    creates: "{{ zabbix_documentation_directory.files.path }}/create.sql"
   notify:
     - import zabbix schema
   when:
