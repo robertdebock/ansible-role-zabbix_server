@@ -28,7 +28,8 @@
 
 - name: find zabbix_documentation_directory
   find:
-    paths: /usr/share/doc
+    paths:
+      - /usr/share/doc
     file_type: directory
     use_regex: yes
     patterns:
@@ -37,13 +38,13 @@
   register: zabbix_documentation_directory
 
 - name: unarchive zabbix schema
-  command: gunzip {{ zabbix_documentation_directory.files.path }}/create.sql.gz
+  command: gunzip {{ item.path }}/create.sql.gz
   args:
-    creates: "{{ zabbix_documentation_directory.files.path }}/create.sql"
+    creates: "{{ item.path }}/create.sql"
+  with_items:
+    - "{{ zabbix_documentation_directory.files | last }}"
   notify:
     - import zabbix schema
-  when:
-    - ansible_virtualization_type != "docker"
 
 - name: selinux settings for zabbix_server
   seboolean:
