@@ -42,7 +42,7 @@
     - "{{ zabbix_documentation_directory.files | last }}"
   notify:
     - import zabbix schema
-  loop_contol:
+  loop_control:
     label: "{{ item.path }}"
 
 - name: selinux settings for zabbix_server
