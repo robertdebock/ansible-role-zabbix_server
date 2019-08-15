@@ -31,6 +31,7 @@ The machine you are running this on, may need to be prepared.
 
   roles:
     - role: robertdebock.bootstrap
+    - role: robertdebock.container_docs
     - role: robertdebock.zabbix_repository
 ```
 
@@ -62,6 +63,7 @@ The following roles can be installed to ensure all requirements are met, using `
 ---
 - robertdebock.bootstrap
 - robertdebock.zabbix_repository
+- robertdebock.container_docs
 
 ```
 

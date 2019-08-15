@@ -6,4 +6,5 @@
 
   roles:
     - role: robertdebock.bootstrap
+    - role: robertdebock.container_docs
     - role: robertdebock.zabbix_repository

@@ -15,14 +15,6 @@
   retries: 3
   until: zabbix_server_install_zabbix_server_requirements is succeeded
 
-- name: unset nodocs flag in yum.conf
-  replace:
-    path: /etc/yum.conf
-    regexp: nodocs
-  when:
-    - ansible_pkg_mgr == "yum" or
-      ansible_pkg_mgr == "dnf"
-
 - name: install zabbix_server
   package:
     name: zabbix-server-mysql
@@ -50,6 +42,8 @@
     - "{{ zabbix_documentation_directory.files | last }}"
   notify:
     - import zabbix schema
+  loop_contol:
+    label: "{{ item.path }}"
 
 - name: selinux settings for zabbix_server
   seboolean:
