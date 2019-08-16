@@ -99,6 +99,8 @@ This role has been tested against the following distributions and Ansible versio
 
 A single star means the build may fail, it's marked as an experimental build.
 
+Not all distributions work, because Zabbix has [limited OS support](https://www.zabbix.com/documentation/3.4/manual/installation/requirements).
+
 Testing
 -------
 
