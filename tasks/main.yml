@@ -1,12 +1,5 @@
 ---
 # tasks file for zabbix_server
-- name: test veriables and environment
-  assert:
-    that:
-      - zabbix_server_database_host is defined
-      - zabbix_server_database_user is defined
-      - zabbix_server_database_password is defined
-
 - name: install zabbix-server requirements
   package:
     name: "{{ zabbix_server_requirements }}"
@@ -32,21 +25,21 @@
     patterns:
       - '^zabbix-server-mysql'
       - '^zabbix-server-mysql-.*'
-  register: zabbix_documentation_directory
+  register: zabbix_documentation_directory_found
 
 - name: unarchive zabbix schema
   command: gunzip {{ item.path }}/create.sql.gz
   args:
     creates: "{{ item.path }}/create.sql"
   with_items:
-    - "{{ zabbix_documentation_directory.files | last }}"
+    - "{{ zabbix_documentation_directory_found.files | last }}"
   notify:
     - import zabbix schema
     - restart zabbix_server
   loop_control:
     label: "{{ item.path }}"
 
-- name: selinux settings for zabbix_server
+- name: set selinux settings for zabbix_server
   seboolean:
     name: "{{ item }}"
     state: yes

@@ -20,9 +20,13 @@
   mysql_db:
     state: import
     name: zabbix
-    target: "{{ zabbix_documentation_directory }}/create.sql"
+    target: "{{ item }}/create.sql"
     login_host: "{{ zabbix_server_database_host }}"
     login_user: "{{ zabbix_server_database_user }}"
     login_password: "{{ zabbix_server_database_password }}"
   when:
     - ansible_virtualization_type != "docker"
+  with_items:
+    - "{{ zabbix_documentation_directory_found.files | last }}"
+  loop_control:
+    label: "{{ item }}/create.sql"
