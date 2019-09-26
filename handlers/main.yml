@@ -20,7 +20,7 @@
   mysql_db:
     state: import
     name: zabbix
-    target: "{{ item }}/create.sql"
+    target: "{{ item.path }}/create.sql"
     login_host: "{{ zabbix_server_database_host }}"
     login_user: "{{ zabbix_server_database_user }}"
     login_password: "{{ zabbix_server_database_password }}"
