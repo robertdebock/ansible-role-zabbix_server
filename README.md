@@ -6,6 +6,9 @@ zabbix_server
 
 Install and configure zabbix_server on your system.
 
+<img src="https://img.shields.io/ansible/role/d/35783"/>
+<img src="https://img.shields.io/ansible/quality/35783"/>
+
 Example Playbook
 ----------------
 
@@ -65,6 +68,20 @@ The following roles can be installed to ensure all requirements are met, using `
 - robertdebock.zabbix_repository
 - robertdebock.container_docs
 
+```
+
+This role uses the following modules:
+```yaml
+---
+- command
+- copy
+- find
+- meta
+- mysql_db
+- package
+- seboolean
+- service
+- template
 ```
 
 Context
