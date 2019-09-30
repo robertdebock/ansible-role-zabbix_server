@@ -1,14 +1,9 @@
 ---
 # vars file for zabbix_server
-
 _zabbix_server_requirements:
-  CentOS-6:
-    - MySQL-python
-  CentOS-7:
-    - MySQL-python
   Debian:
     - python-mysqldb
-  Ubuntu:
-    - python-mysqldb
+  RedHat:
+    - MySQL-python
 
-zabbix_server_requirements: "{{ _zabbix_server_requirements[ansible_distribution ~ '-' ~ ansible_distribution_major_version] | default(_zabbix_server_requirements[ansible_distribution]) }}"
+zabbix_server_requirements: "{{ _zabbix_server_requirements[ansible_os_family] }}"
