@@ -104,9 +104,7 @@ This role has been tested on these [container images](https://hub.docker.com/):
 |debian|unstable|yes|
 |debian|latest|no|
 |centos|7|no|
-|redhat|7|no|
 |centos|latest|no|
-|redhat|latest|no|
 |ubuntu|rolling|yes|
 |ubuntu|devel|yes|
 |ubuntu|latest|no|
