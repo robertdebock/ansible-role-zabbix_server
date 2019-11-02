@@ -4,8 +4,6 @@
   service:
     name: zabbix-server
     state: restarted
-  when:
-    - ansible_virtualization_type != "docker"
 
 - name: create selinux mod
   command: checkmodule -M -m -o /etc/zabbix/my-zabbixserver.mod /etc/zabbix/my-zabbixserver.te
@@ -24,8 +22,6 @@
     login_host: "{{ zabbix_server_database_host }}"
     login_user: "{{ zabbix_server_database_user }}"
     login_password: "{{ zabbix_server_database_password }}"
-  when:
-    - ansible_virtualization_type != "docker"
   with_items:
     - "{{ zabbix_documentation_directory_found.files | last }}"
   loop_control:
