@@ -85,13 +85,10 @@ This role has been tested on these [container images](https://hub.docker.com/):
 |---------|---|--------------|
 |amazonlinux|1|no|
 |amazonlinux|latest|no|
-|debian|stable|yes|
 |debian|unstable|yes|
 |debian|latest|no|
 |centos|7|no|
 |centos|latest|no|
-|ubuntu|rolling|yes|
-|ubuntu|devel|yes|
 |ubuntu|latest|no|
 
 This role has been tested on these Ansible versions:
