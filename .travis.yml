@@ -22,8 +22,6 @@ env:
 matrix:
   allow_failures:
     - env: image="debian" tag="unstable"
-    - env: image="ubuntu" tag="rolling"
-    - env: image="ubuntu" tag="devel"
 
 cache:
   - pip
