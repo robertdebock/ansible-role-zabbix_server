@@ -2,6 +2,8 @@
 exceptions:
   - variation: Alpine
     reason: Zabbix has [limited OS support](https://www.zabbix.com/download).
+  - variation: amazonlinux
+    reason: Zabbix has [limited OS support](https://www.zabbix.com/download).
   - variation: Archlinux
     reason: Zabbix has [limited OS support](https://www.zabbix.com/download).
   - variation: CentOS 8
