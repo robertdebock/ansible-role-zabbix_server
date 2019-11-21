@@ -24,7 +24,6 @@ galaxy_info:
     - zabbix
     - server
     - centos
-    - debian
     - el
     - rhel
     - ubuntu
