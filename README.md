@@ -35,6 +35,8 @@ The machine you are running this on, may need to be prepared, I use this playboo
     - role: robertdebock.mysql
       mysql_databases:
         - name: zabbix
+          encoding: utf8
+          collation: utf8_bin
       mysql_users:
         - name: zabbix
           password: zabbix
