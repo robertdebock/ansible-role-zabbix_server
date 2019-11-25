@@ -7,4 +7,11 @@
   roles:
     - role: robertdebock.bootstrap
     - role: robertdebock.container_docs
+    - role: robertdebock.mysql
+      mysql_databases:
+        - name: zabbix
+      mysql_users:
+        - name: zabbix
+          password: zabbix
+          priv: "zabbix.*:ALL"
     - role: robertdebock.zabbix_repository

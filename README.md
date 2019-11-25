@@ -32,6 +32,13 @@ The machine you are running this on, may need to be prepared, I use this playboo
   roles:
     - role: robertdebock.bootstrap
     - role: robertdebock.container_docs
+    - role: robertdebock.mysql
+      mysql_databases:
+        - name: zabbix
+      mysql_users:
+        - name: zabbix
+          password: zabbix
+          priv: "zabbix.*:ALL"
     - role: robertdebock.zabbix_repository
 ```
 
@@ -63,8 +70,9 @@ The following roles can be installed to ensure all requirements are met, using `
 ```yaml
 ---
 - robertdebock.bootstrap
-- robertdebock.zabbix_repository
 - robertdebock.container_docs
+- robertdebock.mysql
+- robertdebock.zabbix_repository
 
 ```
 
