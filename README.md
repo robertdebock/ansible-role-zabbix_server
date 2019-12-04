@@ -123,7 +123,6 @@ Some variarations of the build matrix do not work. These are the variations and 
 | Ubuntu rolling | Zabbix has [limited OS support](https://www.zabbix.com/download). |
 
 
-
 Testing
 -------
 
