@@ -2,7 +2,7 @@
 # vars file for zabbix_server
 _zabbix_server_requirements:
   Debian:
-    - python-mysqldb
+    - python3-mysqldb
   RedHat:
     - MySQL-python
   RedHat-8:
