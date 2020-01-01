@@ -91,7 +91,7 @@ SocketDir=/var/run/zabbix
 # Default:
 # DBHost=localhost
 
-DBHost={{ zabbix_server_database_host | default('localhost') }}
+DBHost={{ zabbix_server_database_host }}
 
 ### Option: DBName
 #	Database name.
@@ -101,7 +101,7 @@ DBHost={{ zabbix_server_database_host | default('localhost') }}
 # Default:
 # DBName=
 
-DBName={{ zabbix_server_database_name | default('zabbix') }}
+DBName={{ zabbix_server_database_name }}
 
 ### Option: DBSchema
 #	Schema name. Used for IBM DB2 and PostgreSQL.
@@ -117,7 +117,7 @@ DBName={{ zabbix_server_database_name | default('zabbix') }}
 # Default:
 # DBUser=
 
-DBUser={{ zabbix_server_database_user | default('zabbix') }}
+DBUser={{ zabbix_server_database_user }}
 
 ### Option: DBPassword
 #	Database password. Ignored for SQLite.
@@ -127,7 +127,7 @@ DBUser={{ zabbix_server_database_user | default('zabbix') }}
 # Default:
 # DBPassword=
 
-DBPassword={{ zabbix_server_database_pass | default('zabbix') }}
+DBPassword={{ zabbix_server_database_password }}
 
 ### Option: DBSocket
 #	Path to MySQL socket.
