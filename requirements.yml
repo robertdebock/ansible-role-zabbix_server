@@ -2,4 +2,5 @@
 - robertdebock.bootstrap
 - robertdebock.container_docs
 - robertdebock.mysql
+- robertdebock.selinux
 - robertdebock.zabbix_repository

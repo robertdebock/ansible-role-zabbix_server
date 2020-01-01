@@ -4,6 +4,8 @@ zabbix_server
 <img src="https://docs.ansible.com/ansible-tower/3.2.4/html_ja/installandreference/_static/images/logo_invert.png" width="10%" height="10%" alt="Ansible logo" align="right"/>
 <a href="https://travis-ci.org/robertdebock/ansible-role-zabbix_server"> <img src="https://travis-ci.org/robertdebock/ansible-role-zabbix_server.svg?branch=master" alt="Build status"/></a> <img src="https://img.shields.io/ansible/role/d/35783"/> <img src="https://img.shields.io/ansible/quality/35783"/>
 
+<a href="https://github.com/robertdebock/ansible-role-zabbix_server/actions"><img src="https://github.com/robertdebock/ansible-role-zabbix_server/workflows/GitHub%20Action/badge.svg"/></a>
+
 Install and configure zabbix_server on your system.
 
 Example Playbook
@@ -31,6 +33,7 @@ The machine you are running this on, may need to be prepared, I use this playboo
 
   roles:
     - role: robertdebock.bootstrap
+    - role: robertdebock.selinux
     - role: robertdebock.container_docs
     - role: robertdebock.mysql
       mysql_databases:
@@ -74,6 +77,7 @@ The following roles can be installed to ensure all requirements are met, using `
 - robertdebock.bootstrap
 - robertdebock.container_docs
 - robertdebock.mysql
+- robertdebock.selinux
 - robertdebock.zabbix_repository
 
 ```
