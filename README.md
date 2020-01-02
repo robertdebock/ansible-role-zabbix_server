@@ -60,6 +60,7 @@ These variables are set in `defaults/main.yml`:
 
 # The details to connect to the database.
 zabbix_server_database_host: localhost
+zabbix_server_database_name: zabbix
 zabbix_server_database_user: zabbix
 zabbix_server_database_password: zabbix
 ```
