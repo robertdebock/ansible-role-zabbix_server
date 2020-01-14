@@ -7,5 +7,7 @@ _zabbix_server_requirements:
     - MySQL-python
   RedHat-8:
     - python3-PyMySQL
+  Suse:
+    - python3-PyMySQL
 
 zabbix_server_requirements: "{{ _zabbix_server_requirements[ansible_os_family ~ '-' ~ ansible_distribution_major_version] | default (_zabbix_server_requirements[ansible_os_family]) }}"
