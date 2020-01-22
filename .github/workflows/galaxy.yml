@@ -9,6 +9,8 @@ on:
   push:
     tags:
       - '*'
+  schedule:
+    - cron: '33 13 27 * *'
 
 jobs:
   release:
