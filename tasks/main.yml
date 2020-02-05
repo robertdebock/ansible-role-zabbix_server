@@ -28,11 +28,9 @@
   register: zabbix_documentation_directory_found
 
 - name: unarchive zabbix schema
-  command: gunzip {{ item.path }}/create.sql.gz
+  command: gunzip {{ zabbix_documentation_directory_found.files[-1].path }}/create.sql.gz
   args:
-    creates: "{{ item.path }}/create.sql"
-  with_items:
-    - "{{ zabbix_documentation_directory_found.files | last }}"
+    creates: "{{ zabbix_documentation_directory_found.files[-1].path }}/create.sql"
   notify:
     - import zabbix schema
     - restart zabbix_server
@@ -44,7 +42,7 @@
     name: "{{ item }}"
     state: yes
     persistent: yes
-  with_items:
+  loop:
     - httpd_can_connect_zabbix
     - httpd_can_network_connect_db
     - zabbix_can_network

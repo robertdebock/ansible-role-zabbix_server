@@ -18,11 +18,7 @@
   mysql_db:
     state: import
     name: zabbix
-    target: "{{ item.path }}/create.sql"
+    target: "{{ zabbix_documentation_directory_found.files[-1].path }}/create.sql"
     login_host: "{{ zabbix_server_database_host }}"
     login_user: "{{ zabbix_server_database_user }}"
     login_password: "{{ zabbix_server_database_password }}"
-  with_items:
-    - "{{ zabbix_documentation_directory_found.files | last }}"
-  loop_control:
-    label: "{{ item.path }}/create.sql"
