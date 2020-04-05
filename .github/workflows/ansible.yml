@@ -11,7 +11,7 @@ on:
       - '*'
   pull_request:
   schedule:
-    - cron: '24 13 26 * *'
+    - cron: '40 21 26 * *'
 
 jobs:
   lint:
@@ -52,3 +52,6 @@ jobs:
         with:
           image: ${{ matrix.config.image }}
           tag: ${{ matrix.config.tag }}
+          options: "--parallel all"
+        env:
+          TOX_PARALLEL_NO_SPINNER: 1
