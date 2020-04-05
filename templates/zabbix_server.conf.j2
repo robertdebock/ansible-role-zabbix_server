@@ -91,7 +91,9 @@ SocketDir=/var/run/zabbix
 # Default:
 # DBHost=localhost
 
-# DBHost={{ zabbix_server_database_host | default('not-set-in-defaults-yml') }}
+{% if zabbix_server_mysql_connection == "network" %}
+DBHost={{ zabbix_server_database_host }}
+{% endif %}
 
 ### Option: DBName
 #	Database name.
@@ -117,7 +119,9 @@ DBName={{ zabbix_server_database_name }}
 # Default:
 # DBUser=
 
-# DBUser={{ zabbix_server_database_user | default('not-set-in-defaults-yml') }}
+{% if zabbix_server_mysql_connection == "network" %}
+DBUser={{ zabbix_server_database_user }}
+{% endif %}
 
 ### Option: DBPassword
 #	Database password. Ignored for SQLite.
@@ -127,7 +131,9 @@ DBName={{ zabbix_server_database_name }}
 # Default:
 # DBPassword=
 
-# DBPassword={{ zabbix_server_database_password | default('not-set-in-defaults-yml') }}
+{% if zabbix_server_mysql_connection == "network" %}
+DBPassword={{ zabbix_server_database_password }}
+{% endif %}
 
 ### Option: DBSocket
 #	Path to MySQL socket.
@@ -135,7 +141,9 @@ DBName={{ zabbix_server_database_name }}
 # Mandatory: no
 # Default:
 
+{% if zabbix_server_mysql_connection == "socket" %}
 DBSocket={{ zabbix_server_mysql_socket }}
+{% endif %}
 
 ### Option: DBPort
 #	Database port when not using local socket. Ignored for SQLite.
