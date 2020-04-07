@@ -119,9 +119,7 @@ DBName={{ zabbix_server_database_name }}
 # Default:
 # DBUser=
 
-{% if zabbix_server_mysql_connection == "network" %}
 DBUser={{ zabbix_server_database_user }}
-{% endif %}
 
 ### Option: DBPassword
 #	Database password. Ignored for SQLite.
@@ -131,9 +129,7 @@ DBUser={{ zabbix_server_database_user }}
 # Default:
 # DBPassword=
 
-{% if zabbix_server_mysql_connection == "network" %}
 DBPassword={{ zabbix_server_database_password }}
-{% endif %}
 
 ### Option: DBSocket
 #	Path to MySQL socket.
