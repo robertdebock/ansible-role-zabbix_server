@@ -68,6 +68,8 @@ These variables are set in `defaults/main.yml`:
 
 # The details to connect to the database.
 zabbix_server_database_name: zabbix
+zabbix_server_database_user: zabbix
+zabbix_server_database_password: zabbix
 
 # How to connect to the mysql database, either `socket` or `network`.
 zabbix_server_mysql_connection: socket
@@ -75,8 +77,6 @@ zabbix_server_mysql_connection: socket
 # When `zabbix_server_mysql_connection` is set to `network` this role needs
 # these three extra setting.
 # zabbix_server_database_host: localhost
-# zabbix_server_database_user: zabbix
-# zabbix_server_database_password: zabbix
 ```
 
 ## Requirements
