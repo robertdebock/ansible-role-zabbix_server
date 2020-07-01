@@ -1,5 +1,8 @@
 ---
 # tasks file for zabbix_server
+- name: include assert.yml
+  include_tasks: assert.yml
+
 - name: install zabbix-server requirements
   package:
     name: "{{ zabbix_server_requirements }}"
