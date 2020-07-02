@@ -2,8 +2,9 @@
 - name: test if zabbix_server_database_name is set correctly
   assert:
     that:
-      - zabbix_server_database_name is defined
       - zabbix_server_database_name | length > 0
+  when:
+    - zabbix_server_database_name is defined
 
 - name: test if zabbix_server_database_user is set correctly
   assert:
