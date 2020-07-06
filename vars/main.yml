@@ -1,5 +1,6 @@
 ---
 # vars file for zabbix_server
+
 _zabbix_server_requirements:
   Debian:
     - python3-mysqldb
