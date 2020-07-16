@@ -7,17 +7,11 @@
   package:
     name: "{{ zabbix_server_requirements }}"
     state: present
-  register: zabbix_server_install_zabbix_server_requirements
-  retries: 3
-  until: zabbix_server_install_zabbix_server_requirements is succeeded
 
 - name: install zabbix_server
   package:
     name: zabbix-server-mysql
     state: present
-  register: zabbix_server_install_zabbix_server
-  until: zabbix_server_install_zabbix_server is succeeded
-  retries: 3
 
 - name: find zabbix_documentation_directory
   find:
