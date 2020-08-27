@@ -51,6 +51,7 @@
   copy:
     src: my-zabbixserver.te
     dest: /etc/zabbix/my-zabbixserver.te
+    mode: "0644"
   notify:
     - create selinux mod
     - create selinux pp
@@ -66,6 +67,7 @@
   template:
     src: zabbix_server.conf.j2
     dest: /etc/zabbix/zabbix_server.conf
+    mode: "0644"
   notify:
     - restart zabbix_server
 
