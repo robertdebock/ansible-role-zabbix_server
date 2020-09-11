@@ -5,13 +5,13 @@
     name: zabbix-server
     state: restarted
 
-- name: create selinux mod
+- name: create selinux mod for zabbix_server
   command: checkmodule -M -m -o /etc/zabbix/my-zabbixserver.mod /etc/zabbix/my-zabbixserver.te
 
-- name: create selinux pp
+- name: create selinux pp for zabbix_server
   command: semodule_package -o /etc/zabbix/my-zabbixserver.pp -m /etc/zabbix/my-zabbixserver.mod
 
-- name: load selinux pp
+- name: load selinux pp for zabbix_server
   command: semodule -i /etc/zabbix/my-zabbixserver.pp
 
 - name: import zabbix schema
