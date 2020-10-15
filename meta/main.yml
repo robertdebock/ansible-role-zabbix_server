@@ -22,6 +22,5 @@ galaxy_info:
   galaxy_tags:
     - zabbix
     - server
-    - centos
 
 dependencies: []
