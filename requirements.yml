@@ -1,5 +1,6 @@
 ---
 - robertdebock.bootstrap
+- robertdebock.core_dependencies
 - robertdebock.container_docs
 - robertdebock.mysql
 - robertdebock.selinux
