@@ -1,7 +1,8 @@
 ---
-- robertdebock.bootstrap
-- robertdebock.core_dependencies
-- robertdebock.container_docs
-- robertdebock.mysql
-- robertdebock.selinux
-- robertdebock.zabbix_repository
+roles:
+  - name: robertdebock.bootstrap
+  - name: robertdebock.core_dependencies
+  - name: robertdebock.container_docs
+  - name: robertdebock.mysql
+  - name: robertdebock.selinux
+  - name: robertdebock.zabbix_repository
