@@ -15,7 +15,7 @@ zabbix_server_requirements: "{{ _zabbix_server_requirements[ansible_os_family ~ 
 
 _zabbix_server_mysql_socket:
   default: /var/run/mysql/mysql.sock
-  Debian: /tmp/mysqld.sock
+  Debian: /var/run/mysqld/mysqld.sock
   RedHat: /var/lib/mysql/mysql.sock
 
 zabbix_server_mysql_socket: "{{ _zabbix_server_mysql_socket[ansible_os_family] | default(_zabbix_server_mysql_socket['default']) }}"
