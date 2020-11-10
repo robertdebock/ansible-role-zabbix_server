@@ -26,7 +26,7 @@
     that:
       - zabbix_server_mysql_connection is defined
       - zabbix_server_mysql_connection | length > 0
-      - zabbix_server_mysql_connection in ["network", "socket"]
+      - zabbix_server_mysql_connection in [ "network", "socket" ]
     quiet: yes
 
 - name: test if zabbix_server_database_host is set correctly

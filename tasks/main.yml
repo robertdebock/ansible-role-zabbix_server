@@ -48,18 +48,18 @@
     - ansible_selinux.status is defined
     - ansible_selinux.status == "enabled"
 
-- name: place selinux type enforcement
-  copy:
-    src: my-zabbixserver.te
-    dest: /etc/zabbix/my-zabbixserver.te
-    mode: "0644"
-  notify:
-    - create selinux mod for zabbix_server
-    - create selinux pp for zabbix_server
-    - load selinux pp for zabbix_server
-  when:
-    - ansible_selinux.status is defined
-    - ansible_selinux.status == "enabled"
+# - name: place selinux type enforcement
+#   copy:
+#     src: my-zabbixserver.te
+#     dest: /etc/zabbix/my-zabbixserver.te
+#     mode: "0644"
+#   notify:
+#     - create selinux mod for zabbix_server
+#     - create selinux pp for zabbix_server
+#     - load selinux pp for zabbix_server
+#   when:
+#     - ansible_selinux.status is defined
+#     - ansible_selinux.status == "enabled"
 
 - name: flush handlers
   meta: flush_handlers
