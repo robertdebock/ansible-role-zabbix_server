@@ -16,4 +16,6 @@ allow zabbix_t self:process setrlimit;
 allow zabbix_t self:unix_stream_socket connectto;
 allow zabbix_t tmp_t:sock_file { create unlink write };
 allow zabbix_t zabbix_var_run_t:sock_file { create unlink write };
+{% if ansible_os_family == "RedHat" and ansible_distribution_major_version != "7" %}
 allow zabbix_t self:capability dac_override;
+{% endif %}
