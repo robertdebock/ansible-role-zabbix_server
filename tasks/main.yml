@@ -49,8 +49,8 @@
     - ansible_selinux.status == "enabled"
 
 - name: place selinux type enforcement
-  template:
-    src: my-zabbixserver.te.j2
+  copy:
+    src: my-zabbixserver.te
     dest: /etc/zabbix/my-zabbixserver.te
     mode: "0644"
   notify:
