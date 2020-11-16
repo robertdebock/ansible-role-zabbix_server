@@ -1,11 +1,4 @@
 ---
-- name: test if zabbix_server_database_name is set correctly
-  assert:
-    that:
-    quiet: yes
-  when:
-    - zabbix_server_database_name is defined
-
 - name: test if zabbix_server_database_user is set correctly
   assert:
     that:
