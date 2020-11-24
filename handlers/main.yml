@@ -1,5 +1,6 @@
 ---
 # handlers file for zabbix_server
+
 - name: create selinux mod for zabbix_server
   command: checkmodule -M -m -o /etc/zabbix/my-zabbixserver.mod /etc/zabbix/my-zabbixserver.te
 
@@ -20,3 +21,5 @@
   service:
     name: zabbix-server
     state: restarted
+  when:
+    - not ansible_check_mode | bool
