@@ -1,4 +1,5 @@
 ---
+
 - name: test if zabbix_server_database_user is set correctly
   assert:
     that:
