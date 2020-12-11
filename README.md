@@ -2,9 +2,9 @@
 
 Install and configure zabbix_server on your system.
 
-|Travis|GitHub|Quality|Downloads|Version|
-|------|------|-------|---------|-------|
-|[![travis](https://travis-ci.com/robertdebock/ansible-role-zabbix_server.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-zabbix_server)|[![github](https://github.com/robertdebock/ansible-role-zabbix_server/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-zabbix_server/actions)|[![quality](https://img.shields.io/ansible/quality/35783)](https://galaxy.ansible.com/robertdebock/zabbix_server)|[![downloads](https://img.shields.io/ansible/role/d/35783)](https://galaxy.ansible.com/robertdebock/zabbix_server)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-zabbix_server.svg)](https://github.com/robertdebock/ansible-role-zabbix_server/releases/)|
+|Travis|GitHub|GitLab|Quality|Downloads|Version|
+|------|------|------|-------|---------|-------|
+|[![travis](https://travis-ci.com/robertdebock/ansible-role-zabbix_server.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-zabbix_server)|[![github](https://github.com/robertdebock/ansible-role-zabbix_server/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-zabbix_server/actions)|[![gitlab](https://gitlab.com/robertdebock/ansible-role-zabbix_server/badges/master/pipeline.svg)](https://gitlab.com/robertdebock/ansible-role-zabbix_server)|[![quality](https://img.shields.io/ansible/quality/35783)](https://galaxy.ansible.com/robertdebock/zabbix_server)|[![downloads](https://img.shields.io/ansible/role/d/35783)](https://galaxy.ansible.com/robertdebock/zabbix_server)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-zabbix_server.svg)](https://github.com/robertdebock/ansible-role-zabbix_server/releases/)|
 
 ## [Example Playbook](#example-playbook)
 
@@ -69,10 +69,11 @@ zabbix_server_mysql_connection: socket
 
 ## [Requirements](#requirements)
 
-- Access to a repository containing packages, likely on the internet.
-- A recent version of Ansible. (Tests run on the current, previous and next release of Ansible.)
+- pip packages listed in [requirements.txt](https://github.com/robertdebock/ansible-role-zabbix_server/blob/master/requirements.txt).
 
 ## [Status of requirements](#status-of-requirements)
+
+The following roles are used to prepare a system. You may choose to prepare your system in another way, I have tested these roles as well.
 
 | Requirement | Travis | GitHub |
 |-------------|--------|--------|
