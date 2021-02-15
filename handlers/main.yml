@@ -11,14 +11,14 @@
   command: semodule -i /etc/zabbix/my-zabbixserver.pp
 
 - name: import zabbix schema
-  mysql_db:
+  community.mysql.mysql_db:
     state: import
     name: zabbix
     target: "{{ zabbix_documentation_directory_found.files[-1].path }}/create.sql"
     login_unix_socket: "{{ zabbix_server_mysql_socket }}"
 
 - name: restart zabbix_server
-  service:
+  ansible.builtin.service:
     name: zabbix-server
     state: restarted
   when:
