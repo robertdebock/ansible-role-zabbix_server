@@ -7,17 +7,17 @@
   delegate_to: localhost
 
 - name: install zabbix-server requirements
-  package:
+  ansible.builtin.package:
     name: "{{ zabbix_server_requirements }}"
     state: present
 
 - name: install zabbix_server
-  package:
+  ansible.builtin.package:
     name: zabbix-server-mysql
     state: present
 
 - name: find zabbix_documentation_directory
-  find:
+  ansible.builtin.find:
     paths:
       - "{{ zabbix_server_docdir }}"
     file_type: directory
@@ -63,10 +63,10 @@
     - ansible_selinux.status == "enabled"
 
 - name: flush handlers
-  meta: flush_handlers
+  ansible.builtin.meta: flush_handlers
 
 - name: configure zabbix_server
-  template:
+  ansible.builtin.template:
     src: zabbix_server.conf.j2
     dest: /etc/zabbix/zabbix_server.conf
     mode: "0644"
@@ -74,7 +74,7 @@
     - restart zabbix_server
 
 - name: start and enable zabbix_server
-  service:
+  ansible.builtin.service:
     name: zabbix-server
     state: started
     enabled: yes
