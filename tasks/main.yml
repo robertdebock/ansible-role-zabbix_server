@@ -28,7 +28,7 @@
   register: zabbix_documentation_directory_found
 
 - name: unarchive zabbix schema
-  command: gunzip {{ zabbix_documentation_directory_found.files[-1].path }}/create.sql.gz
+  ansible.builtin.command: gunzip {{ zabbix_documentation_directory_found.files[-1].path }}/create.sql.gz
   args:
     creates: "{{ zabbix_documentation_directory_found.files[-1].path }}/create.sql"
   notify:
