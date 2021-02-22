@@ -40,7 +40,7 @@
 - name: configure selinux
   block:
     - name: set selinux settings for zabbix_server
-      seboolean:
+      ansible.posix.seboolean:
         name: "{{ item }}"
         state: yes
         persistent: yes
@@ -50,7 +50,7 @@
         - zabbix_can_network
 
     - name: place selinux type enforcement
-      copy:
+      ansible.builtin.copy:
         src: my-zabbixserver.te
         dest: /etc/zabbix/my-zabbixserver.te
         mode: "0644"
