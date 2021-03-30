@@ -23,3 +23,6 @@
     state: restarted
   when:
     - not ansible_check_mode | bool
+    - not ci
+  vars:
+    ci: "{{ lookup('env', 'CI') }}"
