@@ -20,5 +20,3 @@
       - zabbix_server_database_host is defined
       - zabbix_server_database_host is string
     quiet: yes
-  when:
-    - zabbix_server_mysql_connection == "mysql"
