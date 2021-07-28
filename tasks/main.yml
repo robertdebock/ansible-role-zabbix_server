@@ -25,6 +25,7 @@
     patterns:
       - '^zabbix-server-mysql'
       - '^zabbix-server-mysql-.*'
+      - '^zabbix-sql-scripts/mysql'
   register: zabbix_documentation_directory_found
 
 - name: unarchive zabbix schema
