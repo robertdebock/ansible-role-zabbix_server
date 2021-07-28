@@ -17,5 +17,6 @@
         - name: zabbix
           password: zabbix
           priv: "zabbix.*:ALL"
+    - role: robertdebock.ca_certificates
     - role: robertdebock.zabbix_repository
     - role: robertdebock.core_dependencies
