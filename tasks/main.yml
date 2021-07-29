@@ -21,7 +21,7 @@
 - name: find zabbix_documentation_directory
   ansible.builtin.find:
     paths:
-      - "{{ zabbix_server_docdir }}/zabbix-sql-scripts"
+      - "{{ zabbix_server_docdir }}/zabbix-sql-scripts/mysql"
     file_type: directory
     use_regex: yes
   register: zabbix_documentation_directory_found
