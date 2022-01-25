@@ -8,7 +8,5 @@ roles:
   - name: robertdebock.selinux
   - name: robertdebock.zabbix_repository
 collections:
-  - name: community.general
   - name: ansible.posix
   - name: community.mysql
-  - name: community.docker
