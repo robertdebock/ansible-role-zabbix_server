@@ -11,3 +11,4 @@ collections:
   - name: ansible.posix
   - name: community.mysql
   - name: community.docker
+  - name: community.general
