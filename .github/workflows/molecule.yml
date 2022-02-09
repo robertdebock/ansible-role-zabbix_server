@@ -33,7 +33,7 @@ jobs:
       fail-fast: false
       matrix:
         config:
-          - image: "centos"
+          - image: "enterpriselinux"
             tag: "latest"
           - image: "debian"
             tag: "latest"
