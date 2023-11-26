@@ -1,4 +1,4 @@
-# Ansible role [zabbix_server](#zabbix_server)
+# [Ansible role zabbix_server](#zabbix_server)
 
 Install and configure zabbix_server on your system.
 
