@@ -1,0 +1,21 @@
+digraph PhiloDilemma {
+  label = "Robert de Bock" ;
+  overlap=false
+  {
+    "zabbix_server" [fillcolor=yellow style=filled penwidth=3]
+    "robertdebock.bootstrap" [fillcolor=green style=filled]
+    "robertdebock.ca_certificates" [fillcolor=green style=filled]
+    "robertdebock.core_dependencies" [fillcolor=green style=filled]
+    "robertdebock.container_docs" [fillcolor=green style=filled]
+    "robertdebock.mysql" [fillcolor=green style=filled]
+    "robertdebock.selinux" [fillcolor=green style=filled]
+    "robertdebock.zabbix_repository" [fillcolor=green style=filled]
+  }
+  "zabbix_server" -> "robertdebock.bootstrap"
+  "zabbix_server" -> "robertdebock.ca_certificates"
+  "zabbix_server" -> "robertdebock.core_dependencies"
+  "zabbix_server" -> "robertdebock.container_docs"
+  "zabbix_server" -> "robertdebock.mysql"
+  "zabbix_server" -> "robertdebock.selinux"
+  "zabbix_server" -> "robertdebock.zabbix_repository"
+}
