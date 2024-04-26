@@ -21,8 +21,6 @@ molecule:
       - image: "opensuse"
         tag: "latest"
       - image: "ubuntu"
-        tag: "bionic"
-      - image: "ubuntu"
         tag: "focal"
 
 galaxy:

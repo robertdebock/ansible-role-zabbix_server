@@ -38,8 +38,6 @@ jobs:
           - image: "opensuse"
             tag: "latest"
           - image: "ubuntu"
-            tag: "bionic"
-          - image: "ubuntu"
             tag: "focal"
     steps:
       - name: checkout
