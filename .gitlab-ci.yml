@@ -21,7 +21,9 @@ molecule:
       - image: "opensuse"
         tag: "latest"
       - image: "ubuntu"
-        tag: "focal"
+        tag: "latest"
+      - image: "ubuntu"
+        tag: "jammy"
 
 galaxy:
   script:

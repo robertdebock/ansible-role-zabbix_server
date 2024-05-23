@@ -20,7 +20,8 @@ galaxy_info:
         - all
     - name: Ubuntu
       versions:
-        - focal
+        - noble
+        - jammy
 
   galaxy_tags:
     - zabbix
