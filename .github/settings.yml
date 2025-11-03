@@ -5,4 +5,4 @@
 repository:
   description: Install and configure zabbix_server on your system.
   homepage: https://robertdebock.nl/
-  topics: zabbix, server, monitoring, ansible, molecule, tox, playbook
+  topics: zabbix, server, monitoring, ansible, molecule, playbook
