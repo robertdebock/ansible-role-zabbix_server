@@ -97,7 +97,7 @@ This role has been tested on these [container images](https://hub.docker.com/u/r
 |container|tags|
 |---------|----|
 |[EL](https://hub.docker.com/r/robertdebock/enterpriselinux)|9|
-|[Debian](https://hub.docker.com/r/robertdebock/debian)|bullseye|
+|[Debian](https://hub.docker.com/r/robertdebock/debian)|all|
 |[Ubuntu](https://hub.docker.com/r/robertdebock/ubuntu)|noble, jammy|
 
 The minimum version of Ansible required is 2.12, tests have been done on:
