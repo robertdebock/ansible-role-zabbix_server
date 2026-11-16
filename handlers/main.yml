@@ -17,7 +17,7 @@
   changed_when: true
 
 - name: Import zabbix schema
-  community.mysql.mysql_db:
+  ansible.mysql.mysql_db:
     state: import
     name: "{{ zabbix_server_database_name }}"
     target: "/usr/share/zabbix-sql-scripts/mysql/server.sql"
