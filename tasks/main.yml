@@ -19,6 +19,14 @@
       - zabbix-sql-scripts
     state: present
 
+- name: Create the log directory
+  ansible.builtin.file:
+    path: /var/log/zabbix
+    state: directory
+    owner: zabbix
+    group: zabbix
+    mode: "0750"
+
 - name: Unarchive zabbix schema
   ansible.builtin.command:
     cmd: gunzip /usr/share/zabbix-sql-scripts/mysql/server.sql.gz

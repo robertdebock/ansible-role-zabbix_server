@@ -11,8 +11,8 @@
     - role: robertdebock.mysql
       mysql_databases:
         - name: zabbix
-          encoding: utf8
-          collation: utf8_bin
+          encoding: utf8mb4
+          collation: utf8mb4_bin
       mysql_users:
         - name: zabbix
           password: zabbix
