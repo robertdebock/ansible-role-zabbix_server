@@ -37,8 +37,8 @@ The machine needs to be prepared. In CI this is done using [`molecule/default/pr
     - role: robertdebock.mysql
       mysql_databases:
         - name: zabbix
-          encoding: utf8
-          collation: utf8_bin
+          encoding: utf8mb4
+          collation: utf8mb4_bin
       mysql_users:
         - name: zabbix
           password: zabbix
@@ -100,11 +100,7 @@ This role has been tested on these [container images](https://hub.docker.com/u/r
 |[Debian](https://hub.docker.com/r/robertdebock/debian)|all|
 |[Ubuntu](https://hub.docker.com/r/robertdebock/ubuntu)|noble, jammy|
 
-The minimum version of Ansible required is 2.12, tests have been done on:
-
-- The previous version.
-- The current version.
-- The development version.
+The minimum version of Ansible (ansible-core) required is 2.20, tests are done with the latest release of ansible-core.
 
 If you find issues, please register them on [GitHub](https://github.com/robertdebock/ansible-role-zabbix_server/issues).
 
